@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: rgb(47, 99, 177);
+            color: white;
+            font: normal 16pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Iniciando os estudos em DOM</h1>
+    <h2 id="ex1">Somente para exemplificar.</h2>
+    <h3 class="ex2">Somente para exemplificar.</h3>
+    <p>Primeiros comandos.</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        var p1 = document.getElementsByTagName('p')[0]
+        var p2 = document.getElementsByTagName('p')[1]
+        document.write('<br>Paragrafo 1 com JS : ' + p1.innerText)
+        document.write('<br>Paragrafo 2 com JS: ' + p2.innerHTML)
+        p1.style.color = 'black'
+        var d = window.document.getElementById('msg') // O window é facultativo, como nos comandos acima
+        d.style.backgroundColor = 'gray'
+        var tit = document.getElementsByClassName('titulo')[0]
+        tit.style.backgroundColor = 'black'
+
+        // JEITO RECOMENDADO: usando querrySelector()
+        var q1 = document.querySelector('h2#ex1')
+        q1.style.color = 'lightgreen'
+        var q2 = document.querySelector('h3.ex2')
+        q2.style.color = 'lightpink'
+    </script>
+</body>
+</html>
